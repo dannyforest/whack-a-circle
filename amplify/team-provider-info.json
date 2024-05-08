@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whackacircle-dev-100200-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-dev-100200-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-dev-100200-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whackacircle-dev-100200-deployment",
+      "UnauthRoleName": "amplify-whackacircle-dev-100200-unauthRole",
+      "StackName": "amplify-whackacircle-dev-100200",
+      "StackId": "arn:aws:cloudformation:us-east-1:381492272245:stack/amplify-whackacircle-dev-100200/8a8274b0-0d43-11ef-9a8f-12cf693adec7",
+      "AmplifyAppId": "d16fbk0l7wj358"
+    },
+    "categories": {
+      "function": {
+        "whackacircle": {
+          "deploymentBucketName": "amplify-whackacircle-dev-100200-deployment",
+          "s3Key": "amplify-builds/whackacircle-736b6a7533392b554a53-build.zip"
+        }
+      }
+    }
+  }
+}

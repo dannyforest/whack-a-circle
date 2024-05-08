@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import ClickTarget from "./Components/ClickTarget";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [counter, setCounter] = useState(0);
+
+    const handleClick = () => {
+        setCounter(counter + 1);
+    }
+
+    return (
+        <div className="App">
+            <ClickTarget
+                timeToDisplay={1000}
+                timeToSwitch={1500}
+                handleClick={() => handleClick()} />
+            <p>{counter}</p>
+        </div>
+    );
 }
 
 export default App;
