@@ -19,5 +19,23 @@
         }
       }
     }
+  },
+  "alexism": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whackacircle-alexism-4312d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-alexism-4312d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-alexism-4312d-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whackacircle-alexism-4312d-deployment",
+      "UnauthRoleName": "amplify-whackacircle-alexism-4312d-unauthRole",
+      "StackName": "amplify-whackacircle-alexism-4312d",
+      "StackId": "arn:aws:cloudformation:us-east-1:381492272245:stack/amplify-whackacircle-alexism-4312d/22ab17d0-0e2d-11ef-b323-12ece55f7b91",
+      "AmplifyAppId": "d16fbk0l7wj358"
+    },
+    "categories": {
+      "function": {
+        "whackacircle": {}
+      }
+    }
   }
 }

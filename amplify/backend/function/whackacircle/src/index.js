@@ -1,6 +1,6 @@
+//test
 const shapes = require('./data/shapes.json');
 // import shapes from './data/shapes.json';
-
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
