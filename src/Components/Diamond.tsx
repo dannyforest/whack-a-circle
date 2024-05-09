@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import StyledShape from "./StyledShape";
 
-const Circle = styled(StyledShape)<{
+const Diamond = styled(StyledShape)<{
     display: string;
     top: string;
     left: string;
     width: string;
     height: string;
 }>`
-    border-radius: 50%;
+    transform: rotate(45deg);
 `;
 
-export default Circle;
+export default Diamond;

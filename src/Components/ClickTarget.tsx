@@ -3,6 +3,8 @@ import {useEffect, useState} from "react";
 import Circle from "./Circle";
 import axios from "axios";
 import Square from "./Square";
+import StyledShape from "./StyledShape";
+import Diamond from "./Diamond";
 
 interface ClickTargetProps {
     timeToDisplay?: number;
@@ -51,6 +53,48 @@ const ClickTarget = ({
         return `${Math.floor(Math.random() * maxLeft)}px`;
     };
 
+    // const shapes = {
+    //     square: <Square
+    //         onClick={handleClick}
+    //         display={display}
+    //         top={getRandomTop()}
+    //         left={getRandomLeft()}
+    //         width={`${width}px`}
+    //         height={`${height}px`}
+    //     />,
+    //     circle: <Circle
+    //         onClick={handleClick}
+    //         display={display}
+    //         top={getRandomTop()}
+    //         left={getRandomLeft()}
+    //         width={`${width}px`}
+    //         height={`${height}px`}
+    //     />,
+    //     diamond: <Diamond
+    //         onClick={handleClick}
+    //         display={display}
+    //         top={getRandomTop()}
+    //         left={getRandomLeft()}
+    //         width={`${width}px`}
+    //         height={`${height}px`}
+    //     />,
+    //     triangle: <Diamond
+    //         onClick={handleClick}
+    //         display={display}
+    //         top={getRandomTop()}
+    //         left={getRandomLeft()}
+    //         width={`${width}px`}
+    //         height={`${height}px`}
+    //     />
+    // }
+
+    // @ts-ignore
+    // return (
+    //     <>
+    //         {shapes[shape]}
+    //     </>
+    // )
+
     let shapeObject;
     switch (shape) {
         case 'square':
@@ -73,25 +117,8 @@ const ClickTarget = ({
                 height={`${height}px`}
             />
             break;
-    }
-
-    // return (
-    //     <>
-    //         {shapeObject}
-    //     </>
-    // )
-
-    return (
-        shape === 'square' ?
-            <Square
-                onClick={handleClick}
-                display={display}
-                top={getRandomTop()}
-                left={getRandomLeft()}
-                width={`${width}px`}
-                height={`${height}px`}
-            /> :
-            <Circle
+        case 'diamond':
+            shapeObject = <Diamond
                 onClick={handleClick}
                 display={display}
                 top={getRandomTop()}
@@ -99,6 +126,42 @@ const ClickTarget = ({
                 width={`${width}px`}
                 height={`${height}px`}
             />
+            break;
+        default:
+            shapeObject = <Diamond
+                onClick={handleClick}
+                display={display}
+                top={getRandomTop()}
+                left={getRandomLeft()}
+                width={`${width}px`}
+                height={`${height}px`}
+            />
+    }
+
+    return (
+        <>
+            {shapeObject}
+        </>
+    )
+
+    // return (
+    //     shape === 'square' ?
+    //         <StyledShape
+    //             onClick={handleClick}
+    //             display={display}
+    //             top={getRandomTop()}
+    //             left={getRandomLeft()}
+    //             width={`${width}px`}
+    //             height={`${height}px`}
+    //         /> :
+    //         <Circle
+    //             onClick={handleClick}
+    //             display={display}
+    //             top={getRandomTop()}
+    //             left={getRandomLeft()}
+    //             width={`${width}px`}
+    //             height={`${height}px`}
+    //         />
         /*
         <>
           {shape === 'square' && (
@@ -143,7 +206,7 @@ const ClickTarget = ({
           )}
         </>
          */
-    )
+    // )
 }
 
 export default ClickTarget;

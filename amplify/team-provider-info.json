@@ -15,7 +15,7 @@
       "function": {
         "whackacircle": {
           "deploymentBucketName": "amplify-whackacircle-dev-100200-deployment",
-          "s3Key": "amplify-builds/whackacircle-736b6a7533392b554a53-build.zip"
+          "s3Key": "amplify-builds/whackacircle-6a714845656b376d366d-build.zip"
         }
       }
     }
