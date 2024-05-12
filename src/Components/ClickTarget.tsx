@@ -5,6 +5,7 @@ import axios from "axios";
 import Square from "./Square";
 import StyledShape from "./StyledShape";
 import Diamond from "./Diamond";
+import GameButton from "./GameButton";
 
 interface ClickTargetProps {
     timeToDisplay?: number;
@@ -23,16 +24,17 @@ const ClickTarget = ({
                      }: ClickTargetProps) => {
     const [display, setDisplay] = useState('none');
     const [shape, setShape] = useState('circle');
-
+    const [color, setColor] = useState('');
     useEffect(() => {
         setTimeout(() => {
             setDisplay('block');
         }, timeToDisplay);
 
-        axios.get('https://ck3kgdzaylxjvsuocflostam5e0xsnsb.lambda-url.us-east-1.on.aws/')
+        axios.get('https://qv43rmtywsr7ofqmiliymwcd4a0htbbi.lambda-url.us-east-1.on.aws/')
             .then(res => {
                 console.log(res.data);
                 setShape(res.data.shape);
+                setColor(res.data.color);
             })
 
     }, []);
@@ -100,6 +102,7 @@ const ClickTarget = ({
         case 'square':
             shapeObject = <Square
                 onClick={handleClick}
+                backgroundColor={color}
                 display={display}
                 top={getRandomTop()}
                 left={getRandomLeft()}
@@ -110,6 +113,7 @@ const ClickTarget = ({
         case 'circle':
             shapeObject = <Circle
                 onClick={handleClick}
+                backgroundColor={color}
                 display={display}
                 top={getRandomTop()}
                 left={getRandomLeft()}
@@ -120,6 +124,7 @@ const ClickTarget = ({
         case 'diamond':
             shapeObject = <Diamond
                 onClick={handleClick}
+                backgroundColor={color}
                 display={display}
                 top={getRandomTop()}
                 left={getRandomLeft()}
@@ -130,6 +135,7 @@ const ClickTarget = ({
         default:
             shapeObject = <Diamond
                 onClick={handleClick}
+                backgroundColor={color}
                 display={display}
                 top={getRandomTop()}
                 left={getRandomLeft()}
@@ -141,6 +147,7 @@ const ClickTarget = ({
     return (
         <>
             {shapeObject}
+
         </>
     )
 

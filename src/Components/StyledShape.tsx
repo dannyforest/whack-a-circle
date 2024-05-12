@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledShape = styled.div<{
+    backgroundColor:string,
     display: string;
     top: string;
     left: string;
@@ -8,7 +9,7 @@ const StyledShape = styled.div<{
     height: string;
 }>`
     position: absolute;
-    background-color: red;
+    background-color: ${(props) => props.backgroundColor};
     display: ${(props) => props.display};
     top: ${(props) => props.top};
     left: ${(props) => props.left};

@@ -5,23 +5,5 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
-  },
-  "parameters": {
-    "AMPLIFY_function_whackacircle_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "whackacircle"
-        }
-      ]
-    },
-    "AMPLIFY_function_whackacircle_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "whackacircle"
-        }
-      ]
-    }
   }
 }

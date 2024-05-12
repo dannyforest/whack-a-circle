@@ -19,5 +19,23 @@
         }
       }
     }
+  },
+  "nabila": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whackacircle-nabila-86d18-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-nabila-86d18-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-nabila-86d18-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whackacircle-nabila-86d18-deployment",
+      "UnauthRoleName": "amplify-whackacircle-nabila-86d18-unauthRole",
+      "StackName": "amplify-whackacircle-nabila-86d18",
+      "StackId": "arn:aws:cloudformation:us-east-1:381492272245:stack/amplify-whackacircle-nabila-86d18/2c4a9550-0e2c-11ef-91b8-0e7c2652f94d",
+      "AmplifyAppId": "d16fbk0l7wj358"
+    },
+    "categories": {
+      "function": {
+        "whackacircle": {}
+      }
+    }
   }
 }

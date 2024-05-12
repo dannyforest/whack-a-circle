@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Circle = styled.div<{
+    backgroundColor:string,
     display: string;
     top: string;
     left: string;
@@ -8,7 +9,7 @@ const Circle = styled.div<{
     height: string;
 }>`
     position: absolute;
-    background-color: red;
+    background-color: ${(props) => props.backgroundColor};
     display: ${(props) => props.display};
     top: ${(props) => props.top};
     left: ${(props) => props.left};
