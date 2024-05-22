@@ -12,9 +12,11 @@ interface ClickTargetProps {
     width?: number;
     height?: number;
     handleClick: () => void;
+    handleMiss: () => void;
 }
 
 const ClickTarget = ({
+                        handleMiss,
                          handleClick,
                          timeToDisplay = 1000,
                          timeToSwitch = 1000,
@@ -39,6 +41,7 @@ const ClickTarget = ({
 
     useEffect(() => {
         setTimeout(() => {
+            if (display === 'block') { handleMiss()}
             setDisplay(display === 'none' ? 'block' : 'none');
         }, timeToSwitch);
     }, [display]);
@@ -139,9 +142,9 @@ const ClickTarget = ({
     }
 
     return (
-        <>
+        <div style={{cursor: "pointer"}}>
             {shapeObject}
-        </>
+        </div>
     )
 
     // return (

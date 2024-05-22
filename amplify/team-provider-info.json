@@ -34,6 +34,12 @@
     },
     "categories": {
       "function": {
+        "whackacircle": {
+          "deploymentBucketName": "amplify-whackacircle-alexism-4312d-deployment",
+          "s3Key": "amplify-builds/whackacircle-642b642f58712f7a4850-build.zip"
+        }
+      },
+      "api": {
         "whackacircle": {}
       }
     }
