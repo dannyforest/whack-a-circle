@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import ClickTarget from "./Components/ClickTarget";
+
 function App() {
     const [counter, setCounter] = useState(0);
     const [missCounter, setMissCounter] = useState(0);
