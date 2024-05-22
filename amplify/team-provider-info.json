@@ -34,7 +34,10 @@
     },
     "categories": {
       "function": {
-        "whackacircle": {}
+        "whackacircle": {
+          "deploymentBucketName": "amplify-whackacircle-danny-134713-deployment",
+          "s3Key": "amplify-builds/whackacircle-6a714845656b376d366d-build.zip"
+        }
       }
     }
   }
