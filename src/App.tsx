@@ -5,17 +5,29 @@ import { signOut } from 'aws-amplify/auth';
 import { DataStore } from 'aws-amplify/datastore';
 import {UserScore} from "./models";
 import { getCurrentUser } from 'aws-amplify/auth';
+import styled from "styled-components";
 
 function App() {
     const [counter, setCounter] = useState(0);
+    const [highestScore, setHighestScore] = useState(0);
     const [name, setName] = useState('Patrick');
     const [userId, setUserId] = useState<string | null>(null)
 
     useEffect(() => {
         getCurrentUser().then(({userId}) => {
             setUserId(userId);
+            loadAndSetHighestScore(userId).then();
         })
     }, []);
+
+    const loadAndSetHighestScore = async (userId: string) => {
+        const userScores  = await DataStore.query(UserScore, (c) => c.userId.eq(userId));
+        const original = userScores.length > 0 ? userScores[0] : null;
+        if (original && original.score < highestScore) {
+            setCounter(original.score);
+        }
+    }
+
     const handleClick = async () => {
         setCounter(counter + 1);
 
@@ -36,14 +48,24 @@ function App() {
 
     return (
         <div className="App">
+            <BackDiv
+                onClick={() => setCounter(0)}
+            />
             <ClickTarget
                 timeToDisplay={2000}
                 timeToSwitch={1500}
-                handleClick={async () =>await handleClick()} />
+                handleClick={async () => await handleClick()}/>
             <button onClick={async () => await signOut()}>Log out</button>
-            <p>{counter}</p>
+            <p>Current Score: {counter}</p>
+            <p>Highest Score: {highestScore}</p>
         </div>
     );
 }
 
 export default App;
+
+const BackDiv = styled.div`
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+`;
