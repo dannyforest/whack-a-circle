@@ -38,6 +38,12 @@
           "deploymentBucketName": "amplify-whackacircle-danny-134713-deployment",
           "s3Key": "amplify-builds/whackacircle-6a714845656b376d366d-build.zip"
         }
+      },
+      "auth": {
+        "whackacircle01750ee0": {}
+      },
+      "api": {
+        "whackacircle": {}
       }
     }
   }
