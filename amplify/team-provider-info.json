@@ -39,11 +39,11 @@
           "s3Key": "amplify-builds/whackacircle-642b642f58712f7a4850-build.zip"
         }
       },
-      "api": {
-        "whackacircle": {}
-      },
       "auth": {
         "whackacircle1efaa08f": {}
+      },
+      "api": {
+        "whackacircle": {}
       }
     }
   }
