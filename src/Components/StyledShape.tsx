@@ -6,9 +6,10 @@ const StyledShape = styled.div<{
     left: string;
     width: string;
     height: string;
+    backgroundColor: string;
 }>`
     position: absolute;
-    background-color: red;
+    background-color: ${(props) => props.backgroundColor};
     display: ${(props) => props.display};
     top: ${(props) => props.top};
     left: ${(props) => props.left};

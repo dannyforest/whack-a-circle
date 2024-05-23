@@ -7,6 +7,7 @@ const Diamond = styled(StyledShape)<{
     left: string;
     width: string;
     height: string;
+    backgroundColor: string;
 }>`
     transform: rotate(45deg);
 `;

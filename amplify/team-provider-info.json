@@ -19,5 +19,32 @@
         }
       }
     }
+  },
+  "audrey": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whackacircle-audrey-247c3-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-audrey-247c3-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-audrey-247c3-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whackacircle-audrey-247c3-deployment",
+      "UnauthRoleName": "amplify-whackacircle-audrey-247c3-unauthRole",
+      "StackName": "amplify-whackacircle-audrey-247c3",
+      "StackId": "arn:aws:cloudformation:us-east-1:381492272245:stack/amplify-whackacircle-audrey-247c3/30a4a0a0-0e2c-11ef-a608-1263297c3c89",
+      "AmplifyAppId": "d16fbk0l7wj358"
+    },
+    "categories": {
+      "function": {
+        "whackacircle": {
+          "deploymentBucketName": "amplify-whackacircle-audrey-247c3-deployment",
+          "s3Key": "amplify-builds/whackacircle-514d2f63375074492f64-build.zip"
+        }
+      },
+      "auth": {
+        "whackacircled2d2989b": {}
+      },
+      "api": {
+        "whackacircle": {}
+      }
+    }
   }
 }

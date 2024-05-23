@@ -7,6 +7,7 @@ const Circle = styled(StyledShape)<{
     left: string;
     width: string;
     height: string;
+    backgroundColor: string;
 }>`
     border-radius: 50%;
 `;
