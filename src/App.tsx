@@ -10,7 +10,7 @@ function App() {
     const [counter, setCounter] = useState(0);
     const [longestStreak, setLongestStreak] = useState(0);
     const [userId, setUserId] = useState<string | null>(null);
-    const [name, setName] = useState('');
+    const [name, setName] = useState('felix');
 
     useEffect(() => {
         getCurrentUser().then(({userId}) => {
