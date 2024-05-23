@@ -7,6 +7,7 @@ const Circle = styled.div<{
     width: string;
     height: string;
 }>`
+    z-index: 100;
     position: absolute;
     background-color: red;
     display: ${(props) => props.display};

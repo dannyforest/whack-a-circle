@@ -53,48 +53,6 @@ const ClickTarget = ({
         return `${Math.floor(Math.random() * maxLeft)}px`;
     };
 
-    // const shapes = {
-    //     square: <Square
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />,
-    //     circle: <Circle
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />,
-    //     diamond: <Diamond
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />,
-    //     triangle: <Diamond
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />
-    // }
-
-    // @ts-ignore
-    // return (
-    //     <>
-    //         {shapes[shape]}
-    //     </>
-    // )
-
     let shapeObject;
     switch (shape) {
         case 'square':
@@ -143,70 +101,6 @@ const ClickTarget = ({
             {shapeObject}
         </>
     )
-
-    // return (
-    //     shape === 'square' ?
-    //         <StyledShape
-    //             onClick={handleClick}
-    //             display={display}
-    //             top={getRandomTop()}
-    //             left={getRandomLeft()}
-    //             width={`${width}px`}
-    //             height={`${height}px`}
-    //         /> :
-    //         <Circle
-    //             onClick={handleClick}
-    //             display={display}
-    //             top={getRandomTop()}
-    //             left={getRandomLeft()}
-    //             width={`${width}px`}
-    //             height={`${height}px`}
-    //         />
-        /*
-        <>
-          {shape === 'square' && (
-            <Square
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={`${width}px`}
-              height={`${height}px`}
-            />
-          )}
-          {shape === 'circle' && (
-            <Circle
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={`${width}px`}
-              height={`${height}px`}
-            />
-          )}
-          {shape === 'triangle' && (
-            <Triangle
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={width}
-              height={height}
-            />
-          )}
-          {shape === 'diamond' && (
-            <Diamond
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={`${width}px`}
-              height={`${height}px`}
-            />
-          )}
-        </>
-         */
-    // )
 }
 
 export default ClickTarget;
