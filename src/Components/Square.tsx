@@ -1,19 +1,8 @@
 import styled from "styled-components";
+import styledShape from "./StyledShape";
 
-const Circle = styled.div<{
-    display: string;
-    top: string;
-    left: string;
-    width: string;
-    height: string;
+const Square = styled(styledShape)<{
 }>`
-    position: absolute;
-    background-color: red;
-    display: ${(props) => props.display};
-    top: ${(props) => props.top};
-    left: ${(props) => props.left};
-    width: ${(props) => props.width};
-    height: ${(props) => props.height};
 `;
 
-export default Circle;
+export default Square;

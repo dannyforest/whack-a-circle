@@ -1,9 +1,7 @@
-import styled from "styled-components";
-import {useEffect, useState} from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Circle from "./Circle";
-import axios from "axios";
 import Square from "./Square";
-import StyledShape from "./StyledShape";
 import Diamond from "./Diamond";
 
 interface ClickTargetProps {
@@ -21,192 +19,94 @@ const ClickTarget = ({
                          height = 100,
                          width = 100
                      }: ClickTargetProps) => {
-    const [display, setDisplay] = useState('none');
+    const [display, setDisplay] = useState('block');
     const [shape, setShape] = useState('circle');
+    const [position, setPosition] = useState({ top: '50%', left: '50%' });
 
     useEffect(() => {
-        setTimeout(() => {
-            setDisplay('block');
+        const timerId = setTimeout(() => {
+            setDisplay('block');  // Show the shape
+            updatePosition();     // Update position when we are showing the shape
         }, timeToDisplay);
 
-        axios.get('https://ck3kgdzaylxjvsuocflostam5e0xsnsb.lambda-url.us-east-1.on.aws/')
+        axios.get('https://jdp6xckf2ktndnlddlgcctji5y0erdvq.lambda-url.us-east-1.on.aws/')
             .then(res => {
                 console.log(res.data);
                 setShape(res.data.shape);
-            })
+            }).catch(err => console.error('Error fetching shape data:', err));
 
+        return () => clearTimeout(timerId);
     }, []);
 
     useEffect(() => {
-        setTimeout(() => {
-            setDisplay(display === 'none' ? 'block' : 'none');
-        }, timeToSwitch);
-    }, [display]);
+        if (display === 'block') {
+            const visibilityTimer = setTimeout(() => {
+                setDisplay('none');  // Hide the shape after the specified time
+            }, timeToSwitch);
+            return () => clearTimeout(visibilityTimer);
+        } else {
+            const reappearanceTimer = setTimeout(() => {
+                setDisplay('block');  // Show the shape again
+                updatePosition();     // Update position when we are showing the shape again
+            }, timeToSwitch);
+            return () => clearTimeout(reappearanceTimer);
+        }
+    }, [display, timeToSwitch]);
 
-    const getRandomTop = () => {
+    const updatePosition = () => {
+        setPosition({
+            top: getRandomTop(),
+            left: getRandomLeft()
+        });
+    };
+
+    function getRandomTop() {
         const maxTop = window.innerHeight - height;
         return `${Math.floor(Math.random() * maxTop)}px`;
-    };
+    }
 
-    const getRandomLeft = () => {
+    function getRandomLeft() {
         const maxLeft = window.innerWidth - width;
         return `${Math.floor(Math.random() * maxLeft)}px`;
+    }
+
+    const shapes = ["square", "circle", "diamond"];
+    const currentShapeIndex = shapes.indexOf(shape);
+
+    const handleShapeClick = () => {
+        const nextShapeIndex = (currentShapeIndex + 1) % shapes.length;
+        setShape(shapes[nextShapeIndex]);
+        handleClick();
     };
 
-    // const shapes = {
-    //     square: <Square
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />,
-    //     circle: <Circle
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />,
-    //     diamond: <Diamond
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />,
-    //     triangle: <Diamond
-    //         onClick={handleClick}
-    //         display={display}
-    //         top={getRandomTop()}
-    //         left={getRandomLeft()}
-    //         width={`${width}px`}
-    //         height={`${height}px`}
-    //     />
-    // }
-
-    // @ts-ignore
-    // return (
-    //     <>
-    //         {shapes[shape]}
-    //     </>
-    // )
+    const shapeProps = {
+        onClick: handleShapeClick,
+        display: display === 'block' ? 'block' : 'none',
+        top: position.top,
+        left: position.left,
+        width: `${width}px`,
+        height: `${height}px`
+    };
 
     let shapeObject;
     switch (shape) {
-        case 'square':
-            shapeObject = <Square
-                onClick={handleClick}
-                display={display}
-                top={getRandomTop()}
-                left={getRandomLeft()}
-                width={`${width}px`}
-                height={`${height}px`}
-            />
-            break;
         case 'circle':
-            shapeObject = <Circle
-                onClick={handleClick}
-                display={display}
-                top={getRandomTop()}
-                left={getRandomLeft()}
-                width={`${width}px`}
-                height={`${height}px`}
-            />
+        shapeObject = <Circle {...shapeProps} />;
+        break;
+
+        case 'square':
+            shapeObject = <Square {...shapeProps} />;
             break;
+
         case 'diamond':
-            shapeObject = <Diamond
-                onClick={handleClick}
-                display={display}
-                top={getRandomTop()}
-                left={getRandomLeft()}
-                width={`${width}px`}
-                height={`${height}px`}
-            />
+            shapeObject = <Diamond {...shapeProps} />;
             break;
+
         default:
-            shapeObject = <Diamond
-                onClick={handleClick}
-                display={display}
-                top={getRandomTop()}
-                left={getRandomLeft()}
-                width={`${width}px`}
-                height={`${height}px`}
-            />
+            shapeObject = null; // Handle unexpected shapes by not rendering anything
     }
 
-    return (
-        <>
-            {shapeObject}
-        </>
-    )
-
-    // return (
-    //     shape === 'square' ?
-    //         <StyledShape
-    //             onClick={handleClick}
-    //             display={display}
-    //             top={getRandomTop()}
-    //             left={getRandomLeft()}
-    //             width={`${width}px`}
-    //             height={`${height}px`}
-    //         /> :
-    //         <Circle
-    //             onClick={handleClick}
-    //             display={display}
-    //             top={getRandomTop()}
-    //             left={getRandomLeft()}
-    //             width={`${width}px`}
-    //             height={`${height}px`}
-    //         />
-        /*
-        <>
-          {shape === 'square' && (
-            <Square
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={`${width}px`}
-              height={`${height}px`}
-            />
-          )}
-          {shape === 'circle' && (
-            <Circle
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={`${width}px`}
-              height={`${height}px`}
-            />
-          )}
-          {shape === 'triangle' && (
-            <Triangle
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={width}
-              height={height}
-            />
-          )}
-          {shape === 'diamond' && (
-            <Diamond
-              onClick={onClick}
-              display={display}
-              top={top}
-              left={left}
-              width={`${width}px`}
-              height={`${height}px`}
-            />
-          )}
-        </>
-         */
-    // )
-}
+    return <>{shapeObject}</>
+};
 
 export default ClickTarget;

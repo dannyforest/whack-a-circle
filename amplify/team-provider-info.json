@@ -19,5 +19,32 @@
         }
       }
     }
+  },
+  "patrick": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whackacircle-patrick-ff0ad-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-patrick-ff0ad-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-patrick-ff0ad-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whackacircle-patrick-ff0ad-deployment",
+      "UnauthRoleName": "amplify-whackacircle-patrick-ff0ad-unauthRole",
+      "StackName": "amplify-whackacircle-patrick-ff0ad",
+      "StackId": "arn:aws:cloudformation:us-east-1:381492272245:stack/amplify-whackacircle-patrick-ff0ad/2c25cf40-0e2c-11ef-882f-0affdf017a9d",
+      "AmplifyAppId": "d16fbk0l7wj358"
+    },
+    "categories": {
+      "function": {
+        "whackacircle": {
+          "deploymentBucketName": "amplify-whackacircle-patrick-ff0ad-deployment",
+          "s3Key": "amplify-builds/whackacircle-514d2f63375074492f64-build.zip"
+        }
+      },
+      "auth": {
+        "whackacircle38d1ac67": {}
+      },
+      "api": {
+        "whackacircle": {}
+      }
+    }
   }
 }
