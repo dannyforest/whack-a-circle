@@ -1,3 +1,14 @@
 [
-  "circle", "square", "triangle", "diamond"
+  "circle"{
+
+},
+  "square"{
+
+},
+  "triangle"{
+
+},
+  "diamond"{
+
+}
 ]

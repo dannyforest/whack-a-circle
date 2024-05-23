@@ -29,7 +29,7 @@ const ClickTarget = ({
             setDisplay('block');
         }, timeToDisplay);
 
-        axios.get('https://ck3kgdzaylxjvsuocflostam5e0xsnsb.lambda-url.us-east-1.on.aws/')
+        axios.get('https://ky2svrnpzc5ddlboby4njybueu0wmezr.lambda-url.us-east-1.on.aws/')
             .then(res => {
                 console.log(res.data);
                 setShape(res.data.shape);
