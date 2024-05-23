@@ -12,6 +12,7 @@ type EagerUserScore = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
+  readonly userId: string;
   readonly name: string;
   readonly score: number;
   readonly createdAt?: string | null;
@@ -24,6 +25,7 @@ type LazyUserScore = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
+  readonly userId: string;
   readonly name: string;
   readonly score: number;
   readonly createdAt?: string | null;

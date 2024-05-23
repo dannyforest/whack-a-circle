@@ -14,6 +14,7 @@ export const createUserScore = /* GraphQL */ `mutation CreateUserScore(
 ) {
   createUserScore(input: $input, condition: $condition) {
     id
+    userId
     name
     score
     createdAt
@@ -34,6 +35,7 @@ export const updateUserScore = /* GraphQL */ `mutation UpdateUserScore(
 ) {
   updateUserScore(input: $input, condition: $condition) {
     id
+    userId
     name
     score
     createdAt
@@ -54,6 +56,7 @@ export const deleteUserScore = /* GraphQL */ `mutation DeleteUserScore(
 ) {
   deleteUserScore(input: $input, condition: $condition) {
     id
+    userId
     name
     score
     createdAt

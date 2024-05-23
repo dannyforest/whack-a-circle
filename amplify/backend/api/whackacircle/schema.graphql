@@ -4,7 +4,7 @@ input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONL
 
 type UserScore @model {
   id: ID!
-  userid: String!
+  userId: String!
   name: String!
   score: Int!
 }

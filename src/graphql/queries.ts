@@ -11,6 +11,7 @@ type GeneratedQuery<InputType, OutputType> = string & {
 export const getUserScore = /* GraphQL */ `query GetUserScore($id: ID!) {
   getUserScore(id: $id) {
     id
+    userId
     name
     score
     createdAt
@@ -33,6 +34,7 @@ export const listUserScores = /* GraphQL */ `query ListUserScores(
   listUserScores(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      userId
       name
       score
       createdAt
@@ -65,6 +67,7 @@ export const syncUserScores = /* GraphQL */ `query SyncUserScores(
   ) {
     items {
       id
+      userId
       name
       score
       createdAt

@@ -11,6 +11,7 @@ type GeneratedSubscription<InputType, OutputType> = string & {
 export const onCreateUserScore = /* GraphQL */ `subscription OnCreateUserScore($filter: ModelSubscriptionUserScoreFilterInput) {
   onCreateUserScore(filter: $filter) {
     id
+    userId
     name
     score
     createdAt
@@ -28,6 +29,7 @@ export const onCreateUserScore = /* GraphQL */ `subscription OnCreateUserScore($
 export const onUpdateUserScore = /* GraphQL */ `subscription OnUpdateUserScore($filter: ModelSubscriptionUserScoreFilterInput) {
   onUpdateUserScore(filter: $filter) {
     id
+    userId
     name
     score
     createdAt
@@ -45,6 +47,7 @@ export const onUpdateUserScore = /* GraphQL */ `subscription OnUpdateUserScore($
 export const onDeleteUserScore = /* GraphQL */ `subscription OnDeleteUserScore($filter: ModelSubscriptionUserScoreFilterInput) {
   onDeleteUserScore(filter: $filter) {
     id
+    userId
     name
     score
     createdAt
