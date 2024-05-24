@@ -1,11 +1,11 @@
-import styled from "styled-components";
+
 import {useEffect, useState} from "react";
 import Circle from "./Circle";
 import axios from "axios";
 import Square from "./Square";
-import StyledShape from "./StyledShape";
+
 import Diamond from "./Diamond";
-import GameButton from "./GameButton";
+
 
 interface ClickTargetProps {
     timeToDisplay?: number;
@@ -13,10 +13,12 @@ interface ClickTargetProps {
     width?: number;
     height?: number;
     handleClick: () => void;
+    resetCounter:()=> void;
 }
 
 const ClickTarget = ({
                          handleClick,
+                         resetCounter,
                          timeToDisplay = 1000,
                          timeToSwitch = 1000,
                          height = 100,
@@ -41,6 +43,8 @@ const ClickTarget = ({
 
     useEffect(() => {
         setTimeout(() => {
+            if (display === 'block')
+                resetCounter();
             setDisplay(display === 'none' ? 'block' : 'none');
         }, timeToSwitch);
     }, [display]);
