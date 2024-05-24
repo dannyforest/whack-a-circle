@@ -34,6 +34,15 @@
     },
     "categories": {
       "function": {
+        "whackacircle": {
+          "deploymentBucketName": "amplify-whackacircle-nabila-86d18-deployment",
+          "s3Key": "amplify-builds/whackacircle-514d2f63375074492f64-build.zip"
+        }
+      },
+      "auth": {
+        "whackacirclec179707f": {}
+      },
+      "api": {
         "whackacircle": {}
       }
     }
