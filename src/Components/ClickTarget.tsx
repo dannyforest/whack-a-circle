@@ -13,12 +13,12 @@ interface ClickTargetProps {
     width?: number;
     height?: number;
     handleClick: () => void;
-    resetCounter:()=> void;
+    handleReset:()=> void;
 }
 
 const ClickTarget = ({
                          handleClick,
-                         resetCounter,
+                         handleReset,
                          timeToDisplay = 1000,
                          timeToSwitch = 1000,
                          height = 100,
@@ -44,7 +44,7 @@ const ClickTarget = ({
     useEffect(() => {
         setTimeout(() => {
             if (display === 'block')
-                resetCounter();
+                handleReset();
             setDisplay(display === 'none' ? 'block' : 'none');
         }, timeToSwitch);
     }, [display]);

@@ -7,7 +7,13 @@ import {UserScore} from "./models";
 import { getCurrentUser } from 'aws-amplify/auth';
 import styled from "styled-components";
 import GameButton from "./Components/GameButton";
-import Button from "./Components/Button";
+import LogoutIcon from "@mui/icons-material/Logout";
+import config from './amplifyconfiguration.json';
+import { Amplify } from "aws-amplify";
+import awsmobile from "./aws-exports";
+Amplify.configure(awsmobile);
+Amplify.configure(config);
+
 
 function App() {
     const [counter, setCounter] = useState(0);
@@ -54,24 +60,26 @@ function App() {
         }
     }
 
-    const resetCounter = () => {
-        setCounter(0);
-    }
+
     const handleReset=()=>{
         setCounter(0);
     }
     return (
         <div className="App">
-            <BackDiv
-                onClick={() => handleReset()}
-            />
+
             <ClickTarget
                 timeToDisplay={1000}
                 timeToSwitch={1500}
-                resetCounter ={() => handleReset()}
-                handleClick={() => handleClick()}/>
+                handleReset ={() => handleReset()}
+                handleClick ={async () => await handleClick()}/>
             <GameButton handleReset={() => handleReset()}/>
-            <Button onClick={async () => await signOut()}>Sign out</Button>
+            <IconButton onClick={() => {signOut();}}>
+                <LogoutIcon/>
+            </IconButton>
+            <BackDiv
+                onClick={() => handleReset()}
+            />
+
             <p>Current Score: {counter}</p>
             <p>Highest Score: {highestScore}</p>
             <p>{counter}</p>
@@ -84,4 +92,10 @@ const BackDiv = styled.div`
     position: absolute;
     width: 100vw;
     height: 100vh;
+`;
+const IconButton = styled.button`
+    margin:20px;
+    cursor: pointer;
+    font-size: large;
+    aria-label: logout;
 `;
