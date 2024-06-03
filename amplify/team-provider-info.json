@@ -1,4 +1,28 @@
 {
+  "sofiane": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whackacircle-sofiane-838c9-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-sofiane-838c9-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381492272245:role/amplify-whackacircle-sofiane-838c9-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whackacircle-sofiane-838c9-deployment",
+      "UnauthRoleName": "amplify-whackacircle-sofiane-838c9-unauthRole",
+      "StackName": "amplify-whackacircle-sofiane-838c9",
+      "StackId": "arn:aws:cloudformation:us-east-1:381492272245:stack/amplify-whackacircle-sofiane-838c9/6c5bec70-1926-11ef-a201-12661bc8ad2b",
+      "AmplifyAppId": "d16fbk0l7wj358"
+    },
+    "categories": {
+      "auth": {
+        "whackacircled8544b62": {}
+      },
+      "function": {
+        "whackacircle": {
+          "deploymentBucketName": "amplify-whackacircle-sofiane-838c9-deployment",
+          "s3Key": "amplify-builds/whackacircle-514d2f63375074492f64-build.zip"
+        }
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-whackacircle-dev-100200-authRole",
@@ -15,8 +39,14 @@
       "function": {
         "whackacircle": {
           "deploymentBucketName": "amplify-whackacircle-dev-100200-deployment",
-          "s3Key": "amplify-builds/whackacircle-6a714845656b376d366d-build.zip"
+          "s3Key": "amplify-builds/whackacircle-514d2f63375074492f64-build.zip"
         }
+      },
+      "auth": {
+        "whackacircle01750ee0": {}
+      },
+      "api": {
+        "whackacircle": {}
       }
     }
   },

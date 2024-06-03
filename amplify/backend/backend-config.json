@@ -7,9 +7,9 @@
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDate": "2025-05-23T17:02:07.925Z",
+              "apiKeyExpirationDate": "2025-05-23T17:26:57.054Z",
               "apiKeyExpirationDays": 365,
-              "description": "365"
+              "description": ""
             },
             "authenticationType": "API_KEY"
           }
@@ -17,10 +17,24 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    },
+    "whackcircle": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "whackacircle"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
-    "whackacircle01750ee0": {
+    "whackacircled8544b62": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
